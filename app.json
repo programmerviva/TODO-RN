@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "TODO-RN",
-    "slug": "TODO-RN",
+    "name": "TODO",
+    "slug": "todo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
