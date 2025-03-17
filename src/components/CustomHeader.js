@@ -7,12 +7,14 @@ const CustomHeader = ({title,isBackButton}) => {
   return (
     <View style={styles.container}>
       <SafeAreaView />
+      <View>
       <Text style={styles.text}>{title}</Text>
-      {!isBackButton && 
+      {isBackButton && (
         <TouchableOpacity style={styles.backButton}>
-          <Ionicons name='chevron-back-circle' size={24} color="#fff" />
+          <Ionicons name='chevron-back-circle' size={32} color="#fff" />
         </TouchableOpacity>
-      }
+      )}
+      </View>
     </View>
   )
 }
@@ -27,6 +29,10 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontFamily:"SpaceMono",
     textAlign:"center",
+  },
+  backButton: {
+    position: 'absolute',
+    bottom:0,
   }
 })
 
