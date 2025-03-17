@@ -1,14 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
-
+import { createSlice } from '@reduxjs/toolkit';
 
 export const todoSlice = createSlice({
   name: 'todo',
   initialState: {
     data: [],
   },
-  reducers: {
+  reducers: {},
+});
 
-  }
-})
-
-export default todoSlice.reducer
+export default todoSlice.reducer;
