@@ -1,14 +1,24 @@
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { View, Text, StyleSheet, TextInput, Alert } from "react-native";
 import React, { useState } from "react";
 import CustomHeader from "../components/CustomHeader";
+import CustomButton from "../components/CustomButton";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../redux/reducers/todoSlice";
+import { router } from "expo-router";
 
 const AddTodo = () => {
+  const dispatch = useDispatch()
   const [value, setValue] = useState("");
   const [description, setDescription] = useState('');
 
 
-  const submit = async () => {
-
+  const onSubmit = async () => {
+    if(value.trim() == "" || description.trim() == ""){
+      Alert.alert("Please enter a something!");
+      return;
+    }
+    dispatch(addTodo({title:value, desc: description }))
+    router.back()
   }
 
   return (
@@ -31,8 +41,11 @@ const AddTodo = () => {
         maxLength={120}
         // onChangeText={(text)=>setValue(text)} // sam∈ logic hai next line me.
         onChangeText={setDescription}
-        style={styles.input}
+        style={[styles.input, styles.minHeight]}
       />
+
+    <CustomButton title="ADD" onPress={onSubmit} />
+
     </View>
   );
 };
@@ -49,11 +62,14 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     marginBottom: 10,
     borderRadius: 10,
-    fontSize: 20,
+    fontSize: 16,
     color: '#2b3037',
   },
-  morePadding:{
+  morePadding: {
     marginTop: 20,
+  },
+  minHeight: {
+    minHeight: 120
   }
 });
 
