@@ -9,14 +9,18 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.programmerviva.todo"
+      "package": "com.programmerviva.todo",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "bundler": "metro",
@@ -45,6 +49,9 @@
       "eas": {
         "projectId": "65a38bb1-a196-4c30-9318-569ebf95ecc1"
       }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/65a38bb1-a196-4c30-9318-569ebf95ecc1"
     }
   }
 }
