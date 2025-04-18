@@ -10,7 +10,7 @@ const Layout = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <StatusBar style="light" backgroundColor="white" translucent={false} />
+        <StatusBar style="light" backgroundColor="black" translucent={false} />
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="index" />
           <Stack.Screen name="home" />
